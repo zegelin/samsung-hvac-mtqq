@@ -68,7 +68,6 @@ local fields = {
         command = ProtoField.uint8("samsung_hvac_wrc.cmd", "Command", base.HEX_DEC, COMMANDS),
         data = ProtoField.bytes("samsung_hvac_wrc.data", "Command Data"),
         checksum = ProtoField.uint8("samsung_hvac_wrc.cksum", "Checksum", base.HEX_DEC),
-        test = ProtoField.framenum("samsung_hvac_wrc.frame", "Foo", base.NONE, frametype.REQUEST)
 }
 
 samsung_hvac_wrc.fields = fields
@@ -273,14 +272,14 @@ function samsung_hvac_wrc.dissector(buf, pktinfo, root)
         data_node_constant(8, 0, 7, 0x00)
 
     elseif command == 0x52 and is_reply then
-        data_node_unknown(1, 0, 2)
-        data_node_temperature(1, 3, 7, 'Setpoint Temperature', 9)
+        data_node_unknown(1, 0, 1)
+        data_node_temperature(1, 2, 7, 'Setpoint Temperature', 9)
 
-        data_node_unknown(2, 0, 2)
-        data_node_temperature(2, 3, 7, 'Discharge Temperature?', 9)
+        data_node_unknown(2, 0, 1)
+        data_node_temperature(2, 2, 7, 'Indoor Unit Room Temperature', 9)
 
-        data_node_unknown(3, 0, 7)
-        data_node_temperature(3, 3, 7, 'Temperature?', 9)
+        data_node_unknown(3, 0, 1)
+        data_node_temperature(3, 2, 7, 'Indoor Unit EVA In Temperature', 9)
 
 
         data_node_table(4, 0, 4, 'Blade', {
@@ -298,13 +297,13 @@ function samsung_hvac_wrc.dissector(buf, pktinfo, root)
         })
 
         data_node_unknown(6, 0, 2)
-        data_node_bool(6, 3, 'Filter:', 'filter clean', 'filter dirty')
+        data_node_bool(6, 3, 'Filter', 'filter clean', 'filter dirty')
         data_node_unknown(6, 4, 7)
 
         data_node_constant(7, 0, 7, 0x00)
 
-        data_node_unknown(8, 0, 7)
-        data_node_temperature(8, 3, 7, 'Temperature?', 9)
+        data_node_unknown(8, 0, 1)
+        data_node_temperature(8, 2, 7, 'Indoor Unit EVA Out Temperature', 9)
 
     elseif command == 0x53 and is_reply then
         data_node_constant(1, 0, 7, 0x00)
