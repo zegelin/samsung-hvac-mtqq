@@ -26,7 +26,7 @@ My HVAC system is single zone, single unit, single remote.
 I'm unable to reverse engineer and test the more advanced features supported on more complex systems such as
 multiple zones, multiple indoor units, ERV/ventilators, blade control, humidity/CO² reading, etc.
 
-The COM2/WRC bus seems to have two protocol versions: non-NASA and NASA.
+The COM2/WRC bus possibly has two protocol versions: non-NASA and NASA.
 This project currently only supports the non-NASA variant.
 If your controller model number ends with `N` the bus is using the NASA variant.
 
@@ -34,9 +34,9 @@ My system topology is:
 
 | Component | Model |
 | --- | --- |
-| Outdoor Unit | `AC120HCAFKH/SA`
-| Indoor Unit | `AC120HBHFKH/SA`
-| Wired Remote Control | `MWR-WE10`
+| Outdoor Unit | `AC120HCAFKH/SA` |
+| Indoor Unit | `AC120HBHFKH/SA` |
+| Wired Remote Control | `MWR-WE10` |
 
 My assumption is that the following wired remote controls talk the same protocol:
 
@@ -70,8 +70,7 @@ A small bridging script exists to read packets from an RS-485 serial port and se
    for a list of accepted URL types.
    
    I've only tested this with a [HF2211 Wifi/Ethernet to RS-232/RS-485 Server](http://www.hi-flying.com/rs232-rs485-rs422-to-wifi-serial-server) box.
-
-
+   In its TCP Server mode, run `dump.py` with a port URL of `socket://<hf2211-ip>:8899`.
    
 2. Start Wireshark with the plugin. Either:
     
