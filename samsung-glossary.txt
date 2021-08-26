@@ -1,0 +1,12 @@
+ERV: Energy Recovery Ventilator
+
+FJM: Free Joint Multi
+
+VRF: Variable Refrigerant Flow
+
+NASA: ?  seems to be for newer/higher power units.
+    Different protocol.
+    The wired remotes come in NASA (e.g. MWR-WE10N) and non-NASA variants (MWR-WE10).
+
+    RAC (Non-Nasa Protocol)  CAC (Nasa Protocol)
+    SAMSUNG SNET PRO (Old protocol), SNET PRO 2(NASA Protocol)
