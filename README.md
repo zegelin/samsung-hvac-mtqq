@@ -1,8 +1,8 @@
-<img src="logo.png" height="200">
-
 # Samsung HVAC ⇌ MQTT
 
 Control of select Samsung residential HVAC units over MQTT by emulating a secondary wired remote control.
+
+![logo](logo.png)
 
 ## Planned features:
 
@@ -13,6 +13,8 @@ Control of select Samsung residential HVAC units over MQTT by emulating a second
 ## Status
 
 - [x] Frame Decoding
+- [ ] Tracking, bus enumeration and feature detection
+    - i.e, how the sub WRC knows which indoor units to talk to, and what features they have.
 - [ ] Command Decoding (partially complete)
 - [ ] Sub WRC emulation (in-progress)
 - [ ] MQTT integration
