@@ -2,7 +2,7 @@
 
 # Samsung HVAC ⇌ MQTT
 
-Control of select Samsung residential HVAC units over MQTT by emulating secondary wired remote control.
+Control of select Samsung residential HVAC units over MQTT by emulating a secondary wired remote control.
 
 ## Planned features:
 
@@ -17,7 +17,7 @@ Control of select Samsung residential HVAC units over MQTT by emulating secondar
 - [ ] Sub WRC emulation (in-progress)
 - [ ] MQTT integration
 
-This project also contains partial emulators for the Main WRC, Indoor Units, and ERVs.
+This project also contains partial emulators for the Main WRC, Indoor Units, and ERVs to aid in reverse-engineering the WRC protocol.
 
 ## Compatibility and Limitations
 
